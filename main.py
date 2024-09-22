@@ -1,5 +1,3 @@
-# main.py
-
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -19,7 +17,7 @@ from tensorflow.keras.layers import Dense, LSTM, Input, Attention, Dropout, Flat
 # For automation
 from apscheduler.schedulers.background import BackgroundScheduler
 
-# Ignore TensorFlow warnings
+# Ignore TensorFlow warni9ngs
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
