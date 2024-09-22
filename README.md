@@ -71,15 +71,6 @@ An advanced stock market forecasting bot that predicts future stock prices using
     - **Select Forecast Days**: Choose the number of days ahead you want to forecast.
     - **View Results**: The app will display the latest stock data, historical closing prices, and forecasted prices in both chart and table formats.
 
-## Project Structure
-```bash
-stock-market-forecasting-bot/
-├── main.py          # Script for data processing, model training, and evaluation
-├── app.py           # Streamlit application for interactive forecasting
-├── requirements.txt # List of required Python packages
-├── stock_model.h5   # Saved trained model (generated after running main.py)
-└── README.md        # Project documentation
-
 ## Dependencies
 Python: Version 3.6 or higher
 Required Packages (also listed in requirements.txt):
@@ -92,7 +83,8 @@ scikit-learn
 tensorflow
 streamlit
 apscheduler
-Contributing
+
+## Contributing
 Contributions are welcome! If you'd like to improve this project, please follow these steps:
 
 Fork the Repository: Click on the 'Fork' button at the top right of the repository page.
@@ -114,11 +106,21 @@ Copy code
 git push origin feature/YourFeatureName
 Submit a Pull Request: Go to the original repository and submit a pull request explaining your changes.
 
-License
+## License
 This project is licensed under the MIT License.
 
-Acknowledgments
+## Acknowledgments
 TensorFlow: https://www.tensorflow.org/
 Streamlit: https://www.streamlit.io/
 TA-Lib (Technical Analysis Library): https://github.com/bukosabino/ta
 APScheduler: https://apscheduler.readthedocs.io/
+
+
+## Project Structure
+```bash
+stock-market-forecasting-bot/
+├── main.py          # Script for data processing, model training, and evaluation
+├── app.py           # Streamlit application for interactive forecasting
+├── requirements.txt # List of required Python packages
+├── stock_model.h5   # Saved trained model (generated after running main.py)
+└── README.md        # Project documentation
