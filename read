@@ -1,1 +1,34 @@
-readme 
+# Stock Market Forecasting Bot
+
+An advanced stock market forecasting bot that predicts future stock prices using an LSTM neural network with an attention mechanism. The bot incorporates technical indicators to enhance prediction accuracy and provides an interactive user interface using Streamlit.
+
+## **Table of Contents**
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## **Features**
+
+- **Data Collection**: Fetches historical stock data using Yahoo Finance.
+- **Data Preprocessing**: Adds technical indicators like RSI, MACD, Bollinger Bands, and Moving Averages.
+- **Model Architecture**: Uses an LSTM neural network with an attention mechanism for better performance.
+- **Interactive Dashboard**: Provides an interactive web app using Streamlit for users to input stock tickers and view predictions.
+- **Visualization**: Displays historical data and future predictions in charts and tables.
+- **Automation**: Includes an optional scheduler to retrain the model automatically.
+
+---
+
+## **Installation**
+
+### **1. Clone the Repository**
+
+```bash
+git clone https://github.com/yourusername/stock-market-forecasting-bot.git
+cd stock-market-forecasting-bot
