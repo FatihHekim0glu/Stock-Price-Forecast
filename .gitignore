@@ -1,0 +1,33 @@
+# Wheels and build artifacts
+*.whl
+*.h5
+*.pkl
+*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.eggs/
+build/
+dist/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Session / agent artifacts
+CLAUDE.md
+.claude/
+.specstory/
+.cursor/
+
+# Env files
+.env
+.env.*
+!.env.example

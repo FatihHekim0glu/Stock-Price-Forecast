@@ -1,5 +1,7 @@
 # Stock Market Forecasting Bot
 
+> **Now live as an interactive web tool at https://fatihhekimoglu-platform.vercel.app/tools/stock-price-forecast** — part of the fatihhekimoglu.com quantitative-tools platform. The Streamlit app here remains usable for local development; the hosted version uses the same compute library wrapped in a FastAPI backend.
+
 An advanced stock market forecasting bot that predicts future stock prices using an LSTM neural network with an attention mechanism. The bot incorporates technical indicators to enhance prediction accuracy and provides an interactive user interface using Streamlit.
 
 ## Table of Contents
