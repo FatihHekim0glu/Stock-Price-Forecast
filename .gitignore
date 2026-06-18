@@ -15,6 +15,13 @@ env/
 build/
 dist/
 
+# Test and coverage artifacts
+.coverage
+coverage.xml
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 # IDE / OS
 .vscode/
 .idea/
