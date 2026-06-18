@@ -1,0 +1,119 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stockforecast"
+version = "0.1.0"
+description = "LSTM-with-attention stock price forecaster with technical features."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Fatih Hekimoglu", email = "48997934+FatihHekim0glu@users.noreply.github.com" },
+]
+keywords = [
+    "finance",
+    "forecasting",
+    "lstm",
+    "technical-indicators",
+    "time-series",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+data = [
+    "yfinance>=0.2.55",
+]
+models = [
+    "tensorflow>=2.13",
+]
+dashboard = [
+    "streamlit>=1.32",
+    "matplotlib>=3.7",
+]
+automation = [
+    "apscheduler>=3.10",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "mypy>=1.10",
+    "pandas-stubs",
+]
+all = ["stockforecast[data,models,dashboard,automation,dev]"]
+
+[project.urls]
+Homepage = "https://github.com/FatihHekim0glu/Stock-Price-Forecast"
+Issues = "https://github.com/FatihHekim0glu/Stock-Price-Forecast/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stockforecast"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+# Allow capital single-letter names (X, Y) for the model design matrix and
+# target arrays, which match the conventional notation in the ML code.
+ignore = ["N803", "N806"]
+
+[tool.mypy]
+strict = false
+warn_return_any = true
+files = ["src/stockforecast"]
+
+[[tool.mypy.overrides]]
+module = [
+    "yfinance.*",
+    "tensorflow.*",
+    "tensorflow.keras.*",
+    "sklearn.*",
+    "streamlit.*",
+    "matplotlib.*",
+    "apscheduler.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "integration: hits live data or a real model; skip by default",
+    "slow: long-running",
+    "network: requires network access",
+    "live: runs live TensorFlow inference",
+]
+
+[tool.coverage.run]
+source = ["stockforecast"]
+omit = [
+    "*/model.py",
+    "*/data.py",
+    "main.py",
+    "app.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+fail_under = 90
